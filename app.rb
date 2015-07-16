@@ -10,3 +10,4 @@ require_relative "database_setup.rb"
 
 require_relative "models/photographer.rb"
 require_relative "models/photo.rb"
+require_relative "models/album.rb"
