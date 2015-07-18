@@ -1,0 +1,14 @@
+<h2>
+  Choose a photographer to delete
+</h2>
+
+<form action="/delete_photographer_confirm">
+  <select name="photographer">
+    <% @photographers.each do |photographer| %>
+      <option value="<%= photographer.id %>">
+        <%= photographer.name %>
+      </option>
+    <% end %>
+  </select>
+  <input type="submit" value="Delete this photographer">
+</form>
