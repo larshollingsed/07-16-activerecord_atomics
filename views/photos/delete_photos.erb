@@ -1,0 +1,39 @@
+<h1>
+  Choose photos to delete
+</h1>
+
+<form action="delete_photos_confirm">
+  <table>
+    <tr>
+      <th>
+        Photographer
+      </th>
+      <th>
+        Location
+      </th>
+      <th>
+        Photo
+      </th>
+      <th>
+        Delete this photo?
+      </th>
+    </tr>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td>
+          <%= photo.photographer.name %>
+        </td>
+        <td>
+          <%= photo.location %>
+        </td>
+        <td>
+          <img src="<%= photo.name %>">
+        </td>
+        <td>
+          <input type="checkbox" name="photo[delete][]" value="<%= photo.id %>">
+      </tr>
+    <% end %>
+  </table>
+  <input type="submit" value="Delete these photos">
+</form>
+<a href="/">Main Menu</a>

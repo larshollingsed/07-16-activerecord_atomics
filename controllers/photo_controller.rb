@@ -23,8 +23,8 @@ get "/delete_photos" do
 end
 
 get "/delete_photos_confirm" do
-  parmas["photos"]["delete"].each do |photo|
-    photo.destroy
+  params["photo"]["delete"].each do |photo|
+    Photo.find(photo.to_i).destroy
   end
   erb :"/menu"
 end
