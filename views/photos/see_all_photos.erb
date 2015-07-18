@@ -1,0 +1,32 @@
+<h1>
+  Showing all photos
+</h1>
+
+<table>
+  <tr>
+    <th>
+      Photographer
+    </th>
+    <th>
+      Location
+    </th>
+    <th>
+      Photo
+    </th>
+  </tr>
+  <% @photos.each do |photo| %>
+    <tr>
+      <td>
+        <%= Photographer.find(photo.photographer).name %>
+      </td>
+      <td>
+        <%= photo.location %>
+      </td>
+      <td>
+        <img src="<%= photo.name %>">
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<a href="/">Main Menu</a>

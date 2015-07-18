@@ -1,0 +1,14 @@
+<h2>
+  Add a new photo
+</h2>
+
+<form action="/add_photo_confirm">
+  Photo URL - <input type="text" name="photo[name]">
+  Location - <input type="text" name="photo[location]">
+  Photographer - <select name="photo[photographer]">
+  <% @photographers.each do |photographer| %>
+    <option value="<%= photographer.id %>"><%= photographer.name %>
+    <% end %>
+  </select>
+  <input type="submit" value="Add this photo">
+</form>
