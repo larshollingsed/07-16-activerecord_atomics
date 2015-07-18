@@ -28,3 +28,4 @@ get "/delete_photos_confirm" do
   end
   erb :"/menu"
 end
+

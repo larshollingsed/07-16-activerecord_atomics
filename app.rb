@@ -15,3 +15,5 @@ require_relative "models/photo.rb"
 require_relative "models/album.rb"
 
 require_relative "controllers/photo_controller.rb"
+require_relative "controllers/photographer_controller.rb"
+require_relative "controllers/album_controller.rb"
