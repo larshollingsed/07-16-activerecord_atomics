@@ -17,5 +17,14 @@ class Photo < ActiveRecord::Base
     end
     top_photos
   end
+  
+  def json_format
+    hash = {}
+    hash["id"] = self.id
+    hash["name"] = self.name
+    hash["location"] = self.location
+    hash["photographer_id"] = self.photographer_id
+    hash
+  end
       
 end

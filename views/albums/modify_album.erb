@@ -1,0 +1,40 @@
+<h3>
+  Choose an album to modify
+</h3>
+<form id="album_form">
+  <select name="album[id]">
+    <% @albums.each do |album| %>
+      <option value="<%= album.id %>">
+        <%= album.name %>
+      </option>
+    <% end %>
+  </select>
+  <input type="button" id="choose_album" value="Modify this album">
+</form>
+
+<div id="album_to_modify">
+  <p id="album_name">
+  </p>
+  <form id="photos_in_album">
+    <input type="hidden" name="album[id]" id="hidden_album_id">
+    <table>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td>
+            <input type="checkbox" name="photo[ids][]" value="<%= photo.id %>"><img src="<%= photo.name %>" width="200px">
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <input type="button" value="Save modifications" id="save_album_modifications">
+  </form>
+      
+</div>
+
+
+
+
+
+
+<script src="modify_album.js" type="text/javascript">
+</script>

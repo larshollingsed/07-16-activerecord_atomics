@@ -3,6 +3,7 @@ require "active_record"
 require "sqlite3"
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/json"
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'community_photos.db')
 
