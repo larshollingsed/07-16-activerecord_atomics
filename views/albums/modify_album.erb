@@ -18,7 +18,17 @@
   <form id="photos_in_album">
     <input type="hidden" name="album[id]" id="hidden_album_id">
     Change album name - <input type="text" name="album[name]">
-    <table>
+    <% @photos.each do |photo| %>
+      <p>
+        <input type="checkbox" name="photo[ids][]" value="<%= photo.id %>" id="photo<%= photo.id %>" class="photo_checkbox">
+        <img src="<%= photo.name %>" class="raw_photo">
+    <% end %>
+    <input type="button" value="Save modifications" id="save_album_modifications">
+  </form>
+      
+</div>
+
+    <!-- <table>
       <% @photos.each do |photo| %>
         <tr>
           <td>
@@ -27,13 +37,7 @@
           </td>
         </tr>
       <% end %>
-    </table>
-    <input type="button" value="Save modifications" id="save_album_modifications">
-  </form>
-      
-</div>
-
-
+    </table> -->
 
 
 

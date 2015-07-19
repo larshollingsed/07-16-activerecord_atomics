@@ -3,6 +3,29 @@
   position: absolute;
 }
 
-.picture {
-  width: 250px;
+.raw_photo {
+  width: 200px;
+}
+
+nav a {
+  display: inline-block;
+  width: 100%;
+  background-color: lightblue;
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (min-width: 450px) {
+  nav a {
+    width: 45%;
+  }
+  .raw_photo {
+    width: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  nav a {
+    width: 30%;
+  }
 }
