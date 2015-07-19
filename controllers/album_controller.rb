@@ -23,7 +23,7 @@ get "/modify_album" do
   erb :"/albums/modify_album"
 end
 
-post "/modify_this_album" do
+post "/get_album_info" do
   album = Album.find(params["album"]["id"])
   pics = []
   album.photos.each do |photo|
@@ -41,4 +41,10 @@ post "/save_album_modifications" do
     photo = Photo.find(photo_id.to_i)
     album.photos << photo
   end
+end
+
+get "/view_albums" do
+  @albums = Album.all
+  @photos = Photo.all
+  erb :"/albums/view_albums"
 end

@@ -1,13 +1,9 @@
 $("#choose_album").click(loadAlbumInfo);
   
-// function loadAlbumInfo(){
-  // $.getJSON("/modify_this_album", loadAlbumInfo())
-// };
-
 function loadAlbumInfo() {
   var request = new XMLHttpRequest();
   var formElement = document.getElementById("album_form");
-  request.open("POST", "/modify_this_album");
+  request.open("POST", "/get_album_info");
   
   // sends info from form (via FormData) to previously opened POST route
   request.responseType = "json";

@@ -1,0 +1,25 @@
+<h2>
+  View an album to view the pictures in it
+</h2>
+<form id="album_form">
+  <select name="album[id]">
+    <% @albums.each do |album| %>
+      <option value="<%= album.id %>">
+        <%= album.name %>
+      </option>
+    <% end %>
+  </select>
+  <input type="button" id="choose_album" value="View this album">
+</form>
+
+<div id="photos_in_album">
+  <p id="album_name">
+  </p>
+  <% @photos.each do |photo|%>
+    <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret picture">
+  <% end %>
+</div>
+
+
+<script src="view_albums.js" type="text/javascript">
+</script>
