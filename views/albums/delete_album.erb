@@ -1,0 +1,14 @@
+<h2>
+  Choose a photographer to delete
+</h2>
+
+<form action="/delete_album_confirm">
+  <select name="album[name]">
+    <% @albums.each do |album| %>
+      <option value="<%= album.id %>">
+        <%= album.name %>
+      </option>
+    <% end %>
+  </select>
+  <input type="submit" value="Delete this album">
+</form>
