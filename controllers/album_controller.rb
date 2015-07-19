@@ -36,10 +36,16 @@ end
 
 post "/save_album_modifications" do
   album = Album.find(params["album"]["id"].to_i)
-  album.photos.clear
-  params["photo"]["ids"].each do |photo_id|
-    photo = Photo.find(photo_id.to_i)
-    album.photos << photo
+  if album.name != params["album"]["name"] && params["album"]["name"] != ""
+    album.name = params["album"]["name"]
+    album.save
+  end
+  if params["photo"] != nil
+    album.photos.clear
+    params["photo"]["ids"].each do |photo_id|
+      photo = Photo.find(photo_id.to_i)
+      album.photos << photo
+    end
   end
 end
 
