@@ -12,7 +12,7 @@
   <input type="button" id="choose_album" value="Modify this album">
 </form>
 
-<div id="album_to_modify">
+<div id="album_to_modify" class="secret">
   <p id="album_name">
   </p>
   <form id="photos_in_album">
@@ -21,7 +21,8 @@
       <% @photos.each do |photo| %>
         <tr>
           <td>
-            <input type="checkbox" name="photo[ids][]" value="<%= photo.id %>"><img src="<%= photo.name %>" width="200px">
+            <input type="checkbox" name="photo[ids][]" value="<%= photo.id %>" id="photo<%= photo.id %>" class="photo_checkbox">
+            <img src="<%= photo.name %>" width="200px">
           </td>
         </tr>
       <% end %>

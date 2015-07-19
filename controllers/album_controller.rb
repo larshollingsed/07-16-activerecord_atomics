@@ -25,7 +25,13 @@ end
 
 post "/modify_this_album" do
   album = Album.find(params["album"]["id"])
-  json album.json_format
+  pics = []
+  album.photos.each do |photo|
+    pics << photo.id
+  end
+  jason = album.json_format
+  jason["photos"] = pics
+  json jason
 end
 
 post "/save_album_modifications" do
