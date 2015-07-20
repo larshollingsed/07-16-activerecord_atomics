@@ -7,6 +7,10 @@
   width: 200px;
 }
 
+.top_photo {
+  border: 5px solid yellow;
+}
+
 nav a {
   display: inline-block;
   width: 100%;

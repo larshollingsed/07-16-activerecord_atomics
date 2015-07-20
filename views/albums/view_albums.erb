@@ -1,6 +1,10 @@
 <h2>
   Choose an album to view the pictures in it
 </h2>
+<h4>
+  Photos with a yellow border are "top photos" (in 3 or more albums)
+</h4>
+
 <form id="album_form">
   <select name="album[id]">
     <% @albums.each do |album| %>
@@ -16,7 +20,11 @@
   <p id="album_name">
   </p>
   <% @photos.each do |photo|%>
-    <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo"> 
+    <% if photo.top_photo? %>
+      <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo top_photo">
+    <% else %>
+      <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo"> 
+    <% end %>
   <% end %>
 </div>
 
