@@ -21,7 +21,9 @@
   </p>
   <% @photos.each do |photo|%>
     <% if photo.top_photo? %>
-      <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo top_photo">
+      <div class="top_photo_div">
+        <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo top_photo">
+        <img src="/star.png" class="top_photo_star">
     <% else %>
       <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo"> 
     <% end %>
