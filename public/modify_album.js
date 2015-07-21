@@ -34,10 +34,11 @@ function saveModifications() {
   var request = new XMLHttpRequest();
   var formElement = document.getElementById("photos_in_album");
   request.open("POST", "/save_album_modifications");
-  // request.responseType = "json"
+  request.responseType = "json"
   request.send(new FormData(formElement));
   
   request.addEventListener("load", function() {
-    
+    var confirm = this.response.name + " has been modified";
+    $("#album_name")[0].innerText = confirm;
   });
 }

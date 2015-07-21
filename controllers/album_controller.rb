@@ -47,6 +47,7 @@ post "/save_album_modifications" do
       album.photos << photo
     end
   end
+  json album
 end
 
 get "/view_albums" do
