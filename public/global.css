@@ -7,7 +7,7 @@
   position: relative;
 }
 .raw_photo {
-  width: 200px;
+  width: 150px;
 }
 
 .top_photo {
@@ -28,6 +28,10 @@
 /*  position: relative;*/
   display: inline-block;
 }
+
+table .photo_container {
+  position: relative;
+}
 p#album_name {
   font-size: 30px;
   padding: 5px;
@@ -47,7 +51,7 @@ nav a {
     width: 45%;
   }
   .raw_photo {
-    width: 300px;
+    width: 250px;
   }
 }
 
