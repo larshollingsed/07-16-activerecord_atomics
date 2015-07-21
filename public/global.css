@@ -21,6 +21,10 @@
   left: 10px;
 }
 
+.photo_container {
+  position: relative;
+}
+
 nav a {
   display: inline-block;
   width: 100%;

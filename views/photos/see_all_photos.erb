@@ -23,7 +23,12 @@
         <%= photo.location %>
       </td>
       <td>
-        <img src="<%= photo.name %>" class="raw_photo">
+        <div class="photo_container">
+        <img src="<%= photo.name %>" class="raw_photo<% if photo.top_photo? %> top_photo<% end %>">
+        <% if photo.top_photo? %>
+          <img src="http://www.unmuddled.com/css/img/star.png" class="top_photo_star" id="photo<%= photo.id %>star">
+          <% end %>
+      </div>
       </td>
     </tr>
   <% end %>
