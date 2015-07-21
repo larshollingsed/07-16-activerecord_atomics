@@ -1,4 +1,4 @@
-$("#choose_album").click(loadAlbumInfo);
+document.getElementById("change_album").addEventListener("change", loadAlbumInfo);
   
 function loadAlbumInfo() {
   var request = new XMLHttpRequest();
@@ -16,7 +16,7 @@ function loadAlbumInfo() {
     // an Array of all elements with the "top_photo_star" class
     var all_stars = $(".top_photo_star");
     
-    // adds the "secret" to all photos
+    // adds the "secret" class to all photos
     for (var x = 0; x < all_photos.length; x++) {
       all_photos[x].classList.add("secret");
     }

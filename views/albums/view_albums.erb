@@ -6,14 +6,13 @@
 </h4>
 
 <form id="album_form">
-  <select name="album[id]">
+  <select name="album[id]" id="change_album">
     <% @albums.each do |album| %>
       <option value="<%= album.id %>">
         <%= album.name %>
       </option>
     <% end %>
   </select>
-  <input type="button" id="choose_album" value="View this album">
 </form>
 
 <div id="photos_in_album">
@@ -21,12 +20,14 @@
   </p>
   <% @photos.each do |photo|%>
     <% if photo.top_photo? %>
-      <div class="top_photo_div">
+      <div class="top_photo_div photo_container">
         <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo top_photo">
         <img src="http://www.unmuddled.com/css/img/star.png" class="top_photo_star secret" id="photo<%= photo.id %>star">
     <% else %>
+    <div class="photo_container">
       <img src="<%= photo.name %>" id="photo<%= photo.id %>" class="secret raw_photo"> 
     <% end %>
+    </div>
   <% end %>
 </div>
 

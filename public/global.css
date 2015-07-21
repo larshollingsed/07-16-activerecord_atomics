@@ -23,6 +23,7 @@
 
 .photo_container {
   position: relative;
+  display: inline-block;
 }
 
 nav a {

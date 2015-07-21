@@ -2,14 +2,13 @@
   Choose an album to modify
 </h3>
 <form id="album_form">
-  <select name="album[id]">
+  <select name="album[id]" id="change_album">
     <% @albums.each do |album| %>
       <option value="<%= album.id %>">
         <%= album.name %>
       </option>
     <% end %>
   </select>
-  <input type="button" id="choose_album" value="Modify this album">
 </form>
 
 <div id="album_to_modify" class="secret">

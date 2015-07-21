@@ -1,4 +1,4 @@
-$("#choose_album").click(loadAlbumInfo);
+$("#change_album").change(loadAlbumInfo);
   
 function loadAlbumInfo() {
   var request = new XMLHttpRequest();
